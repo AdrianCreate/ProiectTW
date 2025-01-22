@@ -1,0 +1,270 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+#home-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+#cursuri, #varste-minime, #instructori, #inscriere {
+  width: 100%;
+}
+
+#inscriere {
+  margin-bottom: 2rem;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0F2AF7;
+  color: #EDEEF6;
+  padding: 10px 20px;
+}
+
+h1.title {
+  margin: 0;
+}
+
+/* Navigation menu */
+nav.menu {
+  position: relative;
+  flex-grow: 1;
+}
+
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  background-color: #0F2AF7;
+}
+
+.menu-item {
+  position: relative;
+}
+.menu-item a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+.menu-item a:hover {
+  background-color: #0F9EF7;
+}
+
+/* Submenu */
+.has-submenu .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #0F9EF7;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+}
+.has-submenu:hover .submenu {
+  display: block;
+}
+
+.submenu li a {
+  padding: 10px 20px;
+  white-space: nowrap;
+}
+.submenu li a:hover {
+  background-color: #0F77F7;
+}
+
+/* Hamburger menu (small screens) */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 15px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;
+}
+.hamburger span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin: 6px 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .menu-list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #0F2AF7;
+    width: 100%;
+    padding: 10px 0;
+  }
+  .menu-list.active {
+    display: flex;
+  }
+  .submenu {
+    position: static;
+    width: 100%;
+  }
+  .submenu li a {
+    padding-left: 40px;
+  }
+  .menu-item a {
+    padding: 20px 25px;
+    font-size: 1.2rem;
+  }
+}
+footer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+}
+
+#cursuri ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+
+#cursuri img {
+  width: 100%;
+  max-width: 20rem;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+#varste-minime li {
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .content-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "cursuri varste-minime" "instructori inscriere";
+  }
+  #cursuri {
+    grid-area: cursuri;
+  }
+  #varste-minime {
+    grid-area: varste-minime;
+  }
+  #instructori {
+    grid-area: instructori;
+  }
+  #inscriere {
+    grid-area: inscriere;
+  }
+}
+@media screen and (max-width: 768px) {
+  #home-images {
+    grid-template-columns: 1fr;
+  }
+  .content-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: "cursuri" "varste-minime" "instructori" "inscriere";
+  }
+  footer {
+    grid-template-columns: 1fr;
+  }
+  nav ul {
+    flex-direction: column;
+  }
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #0FC5F7;
+  border: 2px solid transparent;
+  border-color: #0F9EF7 #0F2AF7 #0F9EF7 #0F2AF7;
+  border-radius: 50%;
+  box-shadow: inset 0 4px 6px #0F77F7;
+  opacity: 0.7;
+  text-align: center;
+  line-height: 60px;
+  text-decoration: none;
+  transition: transform 0.5s ease, opacity 0.3s ease;
+}
+.back-to-top .arrow {
+  font-size: 24px;
+  color: #0F51F7;
+  text-shadow: 0 0 5px #0F2AF7, 0 0 10px #0F2AF7, 0 0 15px #0F2AF7;
+  filter: blur(2px);
+  transition: filter 0.3s ease, text-shadow 0.3s ease;
+}
+.back-to-top:hover {
+  transform: rotate(360deg);
+  opacity: 1;
+}
+.back-to-top:hover .arrow {
+  filter: blur(0);
+  text-shadow: none;
+}
+.back-to-top::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #EDEEF6;
+  color: #0F2AF7;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.back-to-top::after:hover {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=styles.css.map */

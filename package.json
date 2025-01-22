@@ -1,0 +1,24 @@
+{
+  "name": "proiect-tw",
+  "version": "1.0.0",
+  "description": "Proiect Tehnici Web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "scoala",
+    "soferi",
+    "cursuri",
+    "permis",
+    "conducere",
+    "vehicule"
+  ],
+  "author": "Alexandru Adrian",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "proiect-tw": "file:"
+  }
+}
